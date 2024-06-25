@@ -1,6 +1,10 @@
 # qcontrol_nf
 Nextflow-based pipeline for quality control and trimming
 
+This pipeline is prepared for:
+- [glebus-sasha/deepvariant_nf](https://github.com/glebus-sasha/deepvariant_nf)
+- [glebus-sasha/octopus_nf](https://github.com/glebus-sasha/octopus_nf)
+
 ```mermaid
 %%{init: {'theme':'base'}}%%
 flowchart TB

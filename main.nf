@@ -28,7 +28,7 @@ if ( params.help ) {
             |
             |Optional arguments:
             |   -profile        <docker/singularity>
-            |   -reports        Generate pipeline reports
+            |   --reports        Generate pipeline reports
             |
 """.stripMargin()
     // Print the help with the stripped margin and exit
