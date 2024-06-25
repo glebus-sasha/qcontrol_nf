@@ -9,7 +9,8 @@ flowchart TB
     end
     v1([QCONTROL])
     subgraph " "
-    v9[" "]
+    v9["html"]
+    v10["fastq"]
     end
     v3([TRIM])
     v8([REPORT])
@@ -19,7 +20,7 @@ flowchart TB
     v0 --> v3
     v1 --> v6
     v3 --> v7
-    v3 --> v9
+    v3 --> v10
     v6 --> v8
     v7 --> v8
     v8 --> v9
