@@ -12,7 +12,6 @@ flowchart TB
     v0["reads"]
     end
     v1([QCONTROL])
-    v11([DOWNLOAD_VEP_CACHE])
     subgraph " "
     v9["html"]
     v10["fastq"]
