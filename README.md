@@ -47,7 +47,7 @@ To quickly run the pipeline, use the following command:
 ```bash
 nextflow run glebus-sasha/qcontrol_nf \
 -profile <docker/singularity> \
---reads '<path-to-reads>/*[rR]{1,2}*.*{fastq,fq}*' \ # quotes are important
+--reads '<path-to-reads>' \
 --outdir results
 ```
 
