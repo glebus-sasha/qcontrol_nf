@@ -37,7 +37,7 @@ if ( params.help ) {
 }
 
 // Define the input channel for FASTQ files, if provided
-input_fastqs = params.reads ? Channel.fromFilePairs(params.reads, checkIfExists: true) : null
+input_fastqs = params.reads ? Channel.fromFilePairs("${params.reads}/*[rR]{1,2}*.*{fastq,fq}*", checkIfExists: true) : null
 
 
 // Define the workflow
