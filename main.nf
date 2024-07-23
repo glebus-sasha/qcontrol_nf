@@ -37,8 +37,8 @@ if ( params.help ) {
 }
 
 // Make the results directory if it needs
-def pipeline_report_dir = new File("${params.outdir}")
-pipeline_report_dir.mkdirs()
+def result_dir = new File("${params.outdir}")
+result_dir.mkdirs()
 
 
 // Define the input channel for FASTQ files, if provided
