@@ -40,6 +40,12 @@ if ( params.help ) {
 def result_dir = new File("${params.outdir}")
 result_dir.mkdirs()
 
+// Make the pipeline reports directory if it needs
+if ( params.reports ) {
+    def pipeline_report_dir = new File("${params.outdir}/pipeline_info/")
+    pipeline_report_dir.mkdirs()
+}
+
 
 // Define the input channel for FASTQ files, if provided
 input_fastqs = params.reads ? Channel.fromFilePairs("${params.reads}/*[rR]{1,2}*.*{fastq,fq}*", checkIfExists: true) : null
@@ -47,16 +53,9 @@ input_fastqs = params.reads ? Channel.fromFilePairs("${params.reads}/*[rR]{1,2}*
 
 // Define the workflow
 workflow {
-    
     QCONTROL(input_fastqs)
     TRIM(input_fastqs)
-    REPORT(QCONTROL.out.zip.collect(), TRIM.out.json.collect())
-    
-    // Make the pipeline reports directory if it needs
-    if ( params.reports ) {
-        def pipeline_report_dir = new File("${params.outdir}/pipeline_info/")
-        pipeline_report_dir.mkdirs()
-    }
+    REPORT(QCONTROL.out.zip.collect(), TRIM.out.json.collect()) 
 }
 
 // Log pipeline execution summary on completion

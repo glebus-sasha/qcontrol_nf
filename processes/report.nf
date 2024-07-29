@@ -3,9 +3,8 @@ process REPORT {
     container = 'staphb/multiqc:latest'
     tag "$flagstat"
     publishDir "${params.outdir}/${workflow.start.format('yyyy-MM-dd_HH-mm-ss')}_${workflow.runName}/REPORT"
-//    cpus params.cpus
 //	  debug true
-//    errorStrategy 'ignore'
+    errorStrategy 'ignore'
 	
     input:
     path fastqc
